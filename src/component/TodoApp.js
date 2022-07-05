@@ -23,10 +23,23 @@ const TodoApp = () => {
     setTodos(updateTodo)
 
   }
+  const deleteTodoHandler = (id)=>{
+    const findTodo = todos.filter((t)=> t.id !== id)
+    setTodos(findTodo)
+  }
+  const updateTodos=(id,newValue)=>{
+    const index = todos.findIndex((item)=> item.id === id)
+    const selectTodo = {...todos[index]}
+    selectTodo.text = newValue
+
+    const updateTodo = [...todos]
+    updateTodo[index]= selectTodo
+    setTodos(updateTodo)
+  }
   return (
     <div className='container'>
       <TodoForm addInputValue={addInputValue}/>
-      <TodoList todos={todos} onComplate={complateTodo}/>
+      <TodoList todos={todos} onComplate={complateTodo} onDelete={deleteTodoHandler} onUpdateTodos={updateTodos}/>
     </div>
   )
 }

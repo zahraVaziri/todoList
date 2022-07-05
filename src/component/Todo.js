@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Todo = ({todo,onComplate}) => {
+const Todo = ({todo,onComplate,onDelete,onEdit}) => {
   return (
-    <div className='todo'>
-        <div className={todo.isComplated ? 'complate' : ''}>{todo.text}</div>
+    <div  className='todo'>
+        <div onClick={onComplate} className={todo.isComplated ? 'complate' : ''}>{todo.text}</div>
         <div>
-            <button>edit</button>
-            <button onClick={onComplate}>complate</button>
+            <button onClick={onEdit} className='btn' >edit</button>
+            <button onClick={onDelete} className="btn remove">delete</button>
         </div>
     </div>
   )
