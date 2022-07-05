@@ -26,3 +26,14 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+    margin: 10px 0;
+}
+.complate{
+    text-decoration: line-through;
+    color: #ccc;
+}

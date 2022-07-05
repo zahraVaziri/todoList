@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Todo = ({todo}) => {
+const Todo = ({todo,onComplate}) => {
   return (
-    <div key={todo.id}>
-        <div>{todo.text}</div>
+    <div className='todo'>
+        <div className={todo.isComplated ? 'complate' : ''}>{todo.text}</div>
         <div>
             <button>edit</button>
-            <button>complate</button>
+            <button onClick={onComplate}>complate</button>
         </div>
     </div>
   )

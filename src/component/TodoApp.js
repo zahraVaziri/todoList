@@ -13,10 +13,20 @@ const TodoApp = () => {
     }
     setTodos([...todos,newTodo])
   }
+  const complateTodo = (id)=> {
+    const index = todos.findIndex((item)=> item.id === id)
+    const selectTodo = {...todos[index]}
+    selectTodo.isComplated = !selectTodo.isComplated
+
+    const updateTodo = [...todos]
+    updateTodo[index]= selectTodo
+    setTodos(updateTodo)
+
+  }
   return (
     <div className='container'>
       <TodoForm addInputValue={addInputValue}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onComplate={complateTodo}/>
     </div>
   )
 }
