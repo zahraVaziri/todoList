@@ -16,7 +16,7 @@ const TodoApp = () => {
   return (
     <div className='container'>
       <TodoForm addInputValue={addInputValue}/>
-      <TodoList/>
+      <TodoList todos={todos}/>
     </div>
   )
 }
